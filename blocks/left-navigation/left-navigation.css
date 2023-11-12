@@ -1,0 +1,32 @@
+.left-navigation-wrapper{
+    margin:none;
+    flex:3;
+}
+
+.left-navigation p, .left-navigation li, .left-navigation li a{
+  color: rgb(75, 75, 75);
+  cursor: pointer;
+  display: block;
+  float: none;
+  font-family: "Adobe Clean", sans-serif;
+  font-size: 14.4px;
+  height: 21.6094px;
+  line-height: 21.6px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  width: 60%;
+}
+
+.left-navigation li a{
+    width:100%;
+}
+
+.left-navigation li a:hover{
+    background-color: rgb(232, 232, 232);
+    box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
+  }

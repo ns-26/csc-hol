@@ -141,7 +141,7 @@ a:hover {
 
 /* buttons */
 a.button:any-link, button {
-  font-family: var(--body-font-family);
+  /* font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
@@ -157,12 +157,12 @@ a.button:any-link, button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 30px; */
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
+  /* background-color: var(--link-hover-color);
+  cursor: pointer; */
 }
 
 button:disabled, button:disabled:hover {
@@ -241,11 +241,55 @@ main .section {
 @media (min-width: 900px) {
   .section > div {
     max-width: 1200px;
-    margin: auto;
   }
 }
 
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+
+.section, .left-navigation-container, .content-container{
+  display: flex;
+}
+
+.button-container{
+  color: rgb(75, 75, 75);
+  cursor: pointer;
+  display: block;
+  float: none;
+  font-family: "Adobe Clean", sans-serif;
+  font-size: 14.4px;
+  height: 21.6094px;
+  line-height: 21.6px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  position: relative;
+  text-align: left;
+}
+
+.button-container > a{
+  color: rgb(75, 75, 75);
+  cursor: pointer;
+  display: block;
+  float: none;
+  font-family: "Adobe Clean", sans-serif;
+  font-size: 14.4px;
+  height: 21.6094px;
+  line-height: 21.6px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  width: 60%;
+}
+
+.button-container>a:hover{
+  background-color: rgb(232, 232, 232);
+  box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
 }
