@@ -3,6 +3,7 @@
     flex:3;
     position: relative;
     left: 20px;
+    min-width: 350px;
 }
 
 .left-navigation p, .left-navigation li, .left-navigation li a{
@@ -19,10 +20,10 @@
   position: relative;
   text-align: left;
   text-decoration: none;
-  width: 60%;
 }
 
 .left-navigation li a{
+    max-width: 250px;
     width:100%;
 }
 
@@ -38,6 +39,7 @@
 }
 
 .left-navigation p{
+  max-width: 300px;
   position: relative;
   padding-left: 0px;
   right: 15px;
