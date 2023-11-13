@@ -133,3 +133,22 @@ async function loadPage() {
 }
 
 loadPage();
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Here");
+  const paragraphs = document.querySelectorAll('.left-navigation p');
+  console.log(paragraphs);
+  paragraphs.forEach(paragraph => {
+    paragraph.addEventListener('click', function() {
+      const dropdown = this.nextElementSibling;
+      // Toggle the 'hidden' class to show/hide the dropdown
+      if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+        dropdown.style.display = 'block';
+        paragraph.querySelector('img').src = "/icons/caret-down.svg";
+      } else {
+        dropdown.style.display = 'none';
+        paragraph.querySelector('img').src = "/icons/caret-right.svg";
+      }
+    });
+  });
+});

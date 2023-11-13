@@ -259,9 +259,7 @@ main .section.highlight {
   display: block;
   float: none;
   font-family: "Adobe Clean", sans-serif;
-  font-size: 14.4px;
-  height: 21.6094px;
-  line-height: 21.6px;
+  font-size: 18px;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -276,9 +274,7 @@ main .section.highlight {
   display: block;
   float: none;
   font-family: "Adobe Clean", sans-serif;
-  font-size: 14.4px;
-  height: 21.6094px;
-  line-height: 21.6px;
+  font-size: 18px;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
