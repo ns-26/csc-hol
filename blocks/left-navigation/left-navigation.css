@@ -1,8 +1,8 @@
 .left-navigation-wrapper{
     margin:none;
     flex:3;
-    position: relative;
-    left: 20px;
+    /* position: relative;
+    left: 20px; */
     min-width: 350px;
 }
 
@@ -17,7 +17,7 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
-  position: relative;
+  /* position: relative; */
   text-align: left;
   text-decoration: none;
 }
@@ -33,21 +33,21 @@
 }
 
 .left-navigation img{
-  position: relative;
+  /* position: relative;
   top:6px;
-  right:25px;
+  right:25px; */
 }
 
 .left-navigation p{
   max-width: 300px;
-  position: relative;
+  /* position: relative;
   padding-left: 0px;
-  right: 15px;
+  right: 15px; */
 }
 
 .left-navigation li{
-  position: relative;
-  right: 15px;
+  /* position: relative;
+  right: 15px; */
 }
 
 .left-navigation ul{

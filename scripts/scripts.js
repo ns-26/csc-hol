@@ -11,7 +11,10 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  decorateBlock,
+  loadBlock
 } from './aem.js';
+
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -28,6 +31,28 @@ function buildHeroBlock(main) {
     section.append(buildBlock('hero', { elems: [picture, h1] }));
     main.prepend(section);
   }
+}
+
+/**
+ * Helper function to create DOM elements
+ * @param {string} tag DOM element to be created
+ * @param {array} attributes attributes to be added
+ */
+export function createTag(tag, attributes, html) {
+  const el = document.createElement(tag);
+  if (html) {
+    if (html instanceof HTMLElement || html instanceof SVGElement) {
+      el.append(html);
+    } else {
+      el.insertAdjacentHTML('beforeend', html);
+    }
+  }
+  if (attributes) {
+    Object.entries(attributes).forEach(([key, val]) => {
+      el.setAttribute(key, val);
+    });
+  }
+  return el;
 }
 
 /**
@@ -79,6 +104,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    prepareLeftNav(main);
     document.body.classList.add('appear');
     await waitForLCP(LCP_BLOCKS);
   }
@@ -91,6 +117,14 @@ async function loadEager(doc) {
   } catch (e) {
     // do nothing
   }
+}
+
+export function setUpLeftNav(main, aside) {
+  const leftNav = buildBlock('left-navigation', '');
+  aside.append(leftNav);
+  main.insertBefore(aside, main.querySelector('.section'));
+  decorateBlock(leftNav);
+  return loadBlock(leftNav);
 }
 
 /**
@@ -110,6 +144,8 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+
+  setUpLeftNav(main, main.querySelector('aside'));
 
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
@@ -134,21 +170,7 @@ async function loadPage() {
 
 loadPage();
 
-document.addEventListener('DOMContentLoaded', function() {
-  console.log("Here");
-  const paragraphs = document.querySelectorAll('.left-navigation p');
-  console.log(paragraphs);
-  paragraphs.forEach(paragraph => {
-    paragraph.addEventListener('click', function() {
-      const dropdown = this.nextElementSibling;
-      // Toggle the 'hidden' class to show/hide the dropdown
-      if (dropdown.style.display === 'none' || dropdown.style.display === '') {
-        dropdown.style.display = 'block';
-        paragraph.querySelector('img').src = "/icons/caret-down.svg";
-      } else {
-        dropdown.style.display = 'none';
-        paragraph.querySelector('img').src = "/icons/caret-right.svg";
-      }
-    });
-  });
-});
+function prepareLeftNav(main) {
+  const aside = createTag('aside');
+  main.insertBefore(aside, main.querySelector('.section'));
+}
