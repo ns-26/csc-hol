@@ -230,6 +230,8 @@ main img {
 
 main .section {
   padding: 64px 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 600px) {
@@ -249,11 +251,11 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
-.section, .left-navigation-container, .content-container{
+.left-navigation-container, .content-container{
   display: flex;
 }
 
-.button-container{
+.left-navigation-wrapper .button-container{
   color: rgb(75, 75, 75);
   cursor: pointer;
   display: block;
@@ -268,7 +270,7 @@ main .section.highlight {
   text-align: left;
 }
 
-.button-container > a{
+.left-navigation-wrapper .button-container > a{
   color: rgb(75, 75, 75);
   cursor: pointer;
   display: block;
@@ -285,7 +287,7 @@ main .section.highlight {
   width: 60%;
 }
 
-.button-container>a:hover{
+.left-navigation-wrapper .button-container>a:hover{
   background-color: rgb(232, 232, 232);
   box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
 }
