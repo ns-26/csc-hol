@@ -19,6 +19,25 @@
   display: block;
 }
 
+.columns.width-75-25 > div > div:first-child {
+  flex:8;
+}
+
+.columns.width-75-25 > div > div:last-child {
+  flex: 4;
+}
+
+.columns.width-75-25 .columns-img-col picture {
+  width: 100%;
+  height: auto;
+}
+
+.columns.width-75-25 .columns-img-col img {
+  width: 100%;
+  height: auto;
+}
+
+
 @media (min-width: 900px) {
   .columns > div {
     align-items: center;

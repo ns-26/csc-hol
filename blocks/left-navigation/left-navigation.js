@@ -1,4 +1,4 @@
-import { getMetadata } from "../../scripts/aem.js";
+import { decorateButtons, decorateIcons, getMetadata } from "../../scripts/aem.js";
 
 /**
  * decorates the aside, mainly the left navigation
@@ -6,6 +6,7 @@ import { getMetadata } from "../../scripts/aem.js";
  */
 export default async function decorate(block) {
     // fetch aside content
+    console.log("Decorate Called");
     const leftNavMeta = getMetadata('left-nav');
     const leftNavPath = leftNavMeta ? new URL(leftNavMeta).pathname : '/left-nav';
     const resp = await fetch(`${leftNavPath}.plain.html`);
@@ -27,4 +28,10 @@ export default async function decorate(block) {
       }
     });
   });
+  const leftNavigationWrapper = document.querySelector('.left-navigation-wrapper');
+  if(leftNavigationWrapper){
+    leftNavigationWrapper.classList.add("section");
+  }
+  decorateIcons(block);
+  decorateButtons(block);
 }
