@@ -4,6 +4,7 @@
     position: relative;
     left: 20px;
     min-width: 350px;
+    max-width: 450px;
 }
 
 .left-navigation p, .left-navigation li, .left-navigation li a{
@@ -49,7 +50,7 @@
   right: 15px;
 }
 
-.planning ul,.produce li,.deliver li,.analyze li{
+.planning ul,.produce ul,.deliver ul,.analyze ul{
   display: none;
   transition: display 0.3s ease;
 }
