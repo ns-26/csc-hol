@@ -24,7 +24,6 @@ function loadDropdowns(){
 
 function loadActiveLinks(){
   var path = window.location.pathname;
-  console.log(path);
   // Find the matching link and add the 'active' class
   var links = document.querySelectorAll("a[href='" + path + "']");
   links.forEach(function (link) {
@@ -33,8 +32,12 @@ function loadActiveLinks(){
 
   // Find the parent container of the active link and show its dropdown
   var activeContainer = document.querySelector(".active").closest(".planning, .produce, .deliver, .analyze");
+  console.log(activeContainer);
   if (activeContainer) {
-    activeContainer.style.display = "block";
+    var activeUl = activeContainer.querySelector("ul");
+    if (activeUl) {
+      activeUl.style.display = "block";
+    }
   }
 }
 

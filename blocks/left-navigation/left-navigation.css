@@ -1,8 +1,6 @@
 .left-navigation-wrapper{
-    margin:none;
     flex:3;
-    position: relative;
-    left: 20px;
+    margin-left: 20px;
     min-width: 350px;
     max-width: 450px;
 }
@@ -31,6 +29,11 @@
 .left-navigation li a:hover, .left-navigation p:hover{
     background-color: rgb(232, 232, 232);
     box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
+}
+
+.left-navigation li .active{
+  background-color: rgb(232, 232, 232);
+  box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
 }
 
 .left-navigation img{
