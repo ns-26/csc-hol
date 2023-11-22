@@ -4,17 +4,9 @@ import { decorateButtons, decorateIcons, getMetadata } from "../../scripts/aem.j
  * decorates the aside, mainly the left navigation
  * @param {Element} block The aside block element
  */
-export default async function decorate(block) {
-    // fetch aside content
-    console.log("Decorate Called");
-    const leftNavMeta = getMetadata('left-nav');
-    const leftNavPath = leftNavMeta ? new URL(leftNavMeta).pathname : '/left-nav';
-    const resp = await fetch(`${leftNavPath}.plain.html`);
-    if (resp.ok) {
-        const html = await resp.text();
-        block.innerHTML = html;
-    }
-    const paragraphs = document.querySelectorAll('.left-navigation p');
+
+function loadDropdowns(){
+  const paragraphs = document.querySelectorAll('.left-navigation p');
     paragraphs.forEach(paragraph => {
     paragraph.addEventListener('click', function() {
       const dropdown = this.nextElementSibling;
@@ -28,6 +20,35 @@ export default async function decorate(block) {
       }
     });
   });
+}
+
+function loadActiveLinks(){
+  var path = window.location.pathname;
+  console.log(path);
+  // Find the matching link and add the 'active' class
+  var links = document.querySelectorAll("a[href='" + path + "']");
+  links.forEach(function (link) {
+    link.classList.add("active");
+  });
+
+  // Find the parent container of the active link and show its dropdown
+  var activeContainer = document.querySelector(".active").closest(".planning, .produce, .deliver, .analyze");
+  if (activeContainer) {
+    activeContainer.style.display = "block";
+  }
+}
+
+export default async function decorate(block) {
+  // fetch aside content
+  const leftNavMeta = getMetadata('left-nav');
+  const leftNavPath = leftNavMeta ? new URL(leftNavMeta).pathname : '/left-nav';
+  const resp = await fetch(`${leftNavPath}.plain.html`);
+  if (resp.ok) {
+      const html = await resp.text();
+      block.innerHTML = html;
+  }
+  loadDropdowns();
+  loadActiveLinks();
   const leftNavigationWrapper = document.querySelector('.left-navigation-wrapper');
   if(leftNavigationWrapper){
     leftNavigationWrapper.classList.add("section");
