@@ -416,8 +416,6 @@ function decorateIcon(span, prefix = '') {
  */
 function decorateIcons(element, prefix = '') {
   const icons = [...element.querySelectorAll('span.icon')];
-  console.log(element);
-  console.log(icons);
   icons.forEach((span) => {
     decorateIcon(span, prefix);
   });

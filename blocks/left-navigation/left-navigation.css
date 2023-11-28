@@ -1,8 +1,17 @@
 .left-navigation-wrapper{
     flex:3;
-    margin-left: 20px;
-    min-width: 350px;
-    max-width: 450px;
+    min-width: 400px;
+    max-width: 458px;
+    width: auto;
+}
+
+.left-navigation{
+  position: sticky;
+  top:140px;
+  overflow-y: auto;
+  padding-right:60px;
+  overflow-x:hidden;
+  height: 86vh;
 }
 
 .left-navigation p, .left-navigation li, .left-navigation li a{
@@ -31,6 +40,10 @@
     box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
 }
 
+.left-navigation p:hover{
+  /* width: 90%; */
+}
+
 .left-navigation li .active{
   background-color: rgb(232, 232, 232);
   box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
@@ -39,18 +52,18 @@
 .left-navigation img{
   position: relative;
   top:6px;
-  right:25px;
+  right:23px;
 }
 
 .left-navigation p{
   position: relative;
   padding-left: 0px;
-  right: 15px;
+  left: 18px;
 }
 
 .planning li,.produce li,.deliver li,.analyze li{
   position: relative;
-  right: 15px;
+  /* left: 0px; */
 }
 
 .planning ul,.produce ul,.deliver ul,.analyze ul{
@@ -60,4 +73,5 @@
 
 .left-navigation > div > ul {
   padding-left: 0;
+  margin-left:20px;
 }

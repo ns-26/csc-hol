@@ -32,7 +32,6 @@ function loadActiveLinks(){
 
   // Find the parent container of the active link and show its dropdown
   var activeContainer = document.querySelector(".active").closest(".planning, .produce, .deliver, .analyze");
-  console.log(activeContainer);
   if (activeContainer) {
     var activeUl = activeContainer.querySelector("ul");
     if (activeUl) {
