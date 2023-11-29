@@ -273,7 +273,7 @@ header nav .nav-tools {
 #nav {
   background-color: rgb(32, 32, 32);
   color: rgb(75, 75, 75);
-  font-family: "Adobe Clean", sans-serif;
+  font-family: "adobe-clean", sans-serif;
   font-size: 16px;
   height: 92px;
   line-height: 24px;
@@ -283,7 +283,7 @@ header nav .nav-tools {
 
 .nav-brand{
   color: rgb(255, 255, 255);
-  font-family: "Adobe Clean", sans-serif;
+  font-family: "adobe-clean", sans-serif;
   height: 100%;
   font-size: 2rem;
   font-weight: 700;

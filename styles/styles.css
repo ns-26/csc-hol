@@ -254,7 +254,7 @@ main .section.highlight {
   cursor: pointer;
   display: block;
   float: none;
-  font-family: "Adobe Clean", sans-serif;
+  font-family: "adobe-clean", sans-serif;
   font-size: 18px;
   padding-bottom: 5px;
   padding-left: 10px;
@@ -269,7 +269,7 @@ main .section.highlight {
   cursor: pointer;
   display: block;
   float: none;
-  font-family: "Adobe Clean", sans-serif;
+  font-family: "adobe-clean", sans-serif;
   font-size: 18px;
   padding-bottom: 5px;
   padding-left: 10px;
@@ -285,3 +285,39 @@ main .section.highlight {
   background-color: rgb(232, 232, 232);
   box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
 } */
+
+h1{
+  font-size: 2em;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+h3{
+  font-size: 1.17em;
+  font-weight: 700;
+}
+
+h4{
+  font-size: 1.17em;
+  font-weight: 700;
+}
+
+h5{
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+h6{
+  font-size: 1em;
+  font-weight: 700;
+}
+
+body{
+  font-size:16px;
+  line-height: 24px;
+  font-family: "adobe-clean", sans-serif;
+}
